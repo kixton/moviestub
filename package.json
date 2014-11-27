@@ -20,5 +20,9 @@
   "license": "MIT",
   "devDependencies": {
     "express": "^4.10.4"
+  },
+  "dependencies": {
+    "express":"*",
+    "body-parser":"*"
   }
 }
