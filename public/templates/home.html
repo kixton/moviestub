@@ -1,5 +1,5 @@
 <h2>Book a Movie Ticket</h2>
-<input type="text" placeholder="Search Movies" class="form-control" data-ng-model="search">
+<input type="text" placeholder='Search Movies (Try searching for "Iron Man")' class="form-control" data-ng-model="search">
  
 <div class="row movies-list">
   <div class="col-md-4" data-ng-repeat="movie in movies | orderBy:'name':true | filter:search">
@@ -10,8 +10,8 @@
     <p>{{movie.review | limitTo:99}}...</p>
     <p>
         <h4>{{movie.availability}} tickets Availabile</h4>
-        <a ng-href="#/movie/{{movie.id}}" class="btn btn-primary">Review</a>
-        <a href="#" class="btn btn-success" role="button">Book »</a>
+        <a ng-href="#/movie/{{movie.id}}" class="btn btn-primary">More Info</a>
+        <a href="#" class="btn btn-success" role="button">Buy Ticket »</a>
     </p>
   </div>
 </div>
