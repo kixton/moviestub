@@ -9,7 +9,8 @@ MovieStub is a quick project I created over the course of a day to get more fami
   * Movie summary
   * Number of tickets available
 * User can view more information about a single movie
-* User can "buy"[1] tickets via a booking system 
+* User can "buy"[1] tickets via a booking system
+* User can view tickets booked
 
 [1] Tickets are not actually purchased or processed
 
@@ -23,4 +24,4 @@ node index.js
 ```
 ====
 Created by:
-Kim Pham
+Kim Pham (ms.kimpham@gmail.com)

@@ -9,9 +9,9 @@
     </p>
     <p>{{movie.review | limitTo:99}}...</p>
     <p>
-        <h4>{{movie.availability}} tickets Availabile</h4>
-        <a ng-href="#/movie/{{movie.id}}" class="btn btn-primary">More Info</a>
-        <a data-ng-href="#/bookTickets/{{movie.id}}" class="btn btn-success " role="button" data-ng-disabled="movie.availability == 0">Buy Ticket »</a>
+      <h4>{{movie.availability}} tickets Availabile</h4>
+      <a ng-href="#/movie/{{movie.id}}" class="btn btn-primary">More Info</a>
+      <a data-ng-href="#/bookTickets/{{movie.id}}" class="btn btn-success " role="button" data-ng-disabled="movie.availability == 0">Buy Ticket »</a>
     </p>
   </div>
 </div>
