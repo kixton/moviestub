@@ -22,7 +22,26 @@ movieStubApp.controller("movieStubController", function ($scope, movieStubFactor
   };
 });
 
-movieStubApp.controller("movieDetailsController", 
-  function ($scope, $routeParams) {
+movieStubApp.controller("bookTicketsController", function ($scope, $http, $location, $routeParams) {
   $scope.getMovieById($routeParams.id);
+  $scope.onlyNumbers = /^\d+$/;
+  $scope.formData = {}; // {movie_id: 1, movie_name: "Iron Man", date: "Today - afternoon"}
+  $scope.formData.movie_id = $scope.currMovie.id;
+  $scope.formData.movie_name = $scope.currMovie.name;
+  $scope.formData.date = "Today - afternoon";
+ 
+  // sends data to server
+  $scope.processForm = function () {
+    $http({
+      method: 'POST',
+      url: '/book',
+      data: $.param($scope.formData), // pass in data as strings
+      headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+      } // set headers so Angular passes info as form data (not request payload)
+    })
+    .success(function (data) {
+        console.log(data);
+    });
+  };
 });

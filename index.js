@@ -24,10 +24,24 @@ app.get("/", function (req, res) {
   res.render("public/index.html");
 });
 
+// server side endpoint to get movie data and return it as a json object
 app.get("/movies", function (req, res) {
   var movies = require("./data/movies.json");
   res.json(movies);
 });
  
+// server side endpoint to update booking details
+app.post('/book', function (req, res) {
+  var data = {
+    'qty': req.body.qty,
+    'date': req.body.date,
+    'id': req.body.movie_id,
+    'name': req.body.movie_name
+  };
+  bookings.push(data);
+  res.render('public/templates/booktix.html');
+  res.json(bookings);
+});
+
 app.listen(port);
 console.log("Express server running at http://localhost:" + port);

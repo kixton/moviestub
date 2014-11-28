@@ -8,6 +8,10 @@ movieStubApp.config(function ($routeProvider) {
         templateUrl: "templates/movie.html",
         controller: "movieDetailsController"
     })
+    .when('/bookTickets/:id', {
+      templateUrl: 'templates/booktix.html',
+      controller: 'bookTicketsController'
+    })
     .otherwise({
         redirectTo: "/"
     });

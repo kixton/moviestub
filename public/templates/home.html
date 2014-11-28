@@ -2,7 +2,7 @@
 <input type="text" placeholder='Search Movies (Try searching for "Iron Man")' class="form-control" data-ng-model="search">
  
 <div class="row movies-list">
-  <div class="col-md-4" data-ng-repeat="movie in movies | orderBy:'name':true | filter:search">
+  <div class="col-md-4" data-ng-repeat="movie in movies | orderBy:'name' | filter:search">
     <h2>{{movie.name | uppercase}}</h2>
     <p>
         <img data-ng-src="{{movie.thumb}}" class="thumb-big">
@@ -11,7 +11,7 @@
     <p>
         <h4>{{movie.availability}} tickets Availabile</h4>
         <a ng-href="#/movie/{{movie.id}}" class="btn btn-primary">More Info</a>
-        <a href="#" class="btn btn-success" role="button">Buy Ticket »</a>
+        <a data-ng-href="#/bookTickets/{{movie.id}}" class="btn btn-success " role="button" data-ng-disabled="movie.availability == 0">Buy Ticket »</a>
     </p>
   </div>
 </div>
