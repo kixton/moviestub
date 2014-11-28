@@ -1,7 +1,4 @@
-MovieStub is a quick project I created over the course of a day to get more familiar with AngularJS. I primarily used **AngularJS** (with **Node.js** as a backend). **Twitter Bootstrap** was used for to achieve a basic responsive website.
-
-
-This was a quick project over the course of a day to get more familiar with AngularJS. Enjoy!
+MovieStub is a quick project I created over the course of a day to get more familiar with AngularJS. I primarily used **AngularJS** (with **Node.js** as a backend). I used **Twitter Bootstrap** for a basic responsive website.
 
 **User Stories:**
 * User can search movies
