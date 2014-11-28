@@ -4,6 +4,9 @@ body {
 #container {
   padding: 39px 0px;
 }
+.single-movie-img {
+  width: 100%; 
+}
 .thumb-big
 {
   height: 199px;

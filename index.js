@@ -5,6 +5,7 @@ var express = require("express"),
     bodyParser = require("body-parser");
 
 // create express app
+var bookings = [];
 var app = express();
 
 app.use(morgan("combined"));
@@ -12,7 +13,6 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
-
 app.set("view options", {
   layout: false
 });
@@ -29,17 +29,21 @@ app.get("/movies", function (req, res) {
   var movies = require("./data/movies.json");
   res.json(movies);
 });
+
+app.get("/bookings", function (req, res) {
+  res.json(bookings);
+});
  
 // server side endpoint to update booking details
-app.post('/book', function (req, res) {
+app.post("/book", function (req, res) {
   var data = {
-    'qty': req.body.qty,
-    'date': req.body.date,
-    'id': req.body.movie_id,
-    'name': req.body.movie_name
+    "qty": req.body.qty,
+    "date": req.body.date,
+    "id": req.body.movie_id,
+    "name": req.body.movie_name
   };
   bookings.push(data);
-  res.render('public/templates/booktix.html');
+  // res.render('public/templates/bookings.html');
   res.json(bookings);
 });
 
