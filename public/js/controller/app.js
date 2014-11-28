@@ -1,6 +1,9 @@
-window.movieStubApp = angular.module('movieStubApp', []);
+window.movieStubApp = angular.module('movieStubApp', ["ngRoute"]);
  
 movieStubApp.controller("movieStubController", function ($scope) {
+  $scope.headerSrc = "templates/header.html";
+  $scope.currMovie = null;
+
   $scope.movies = [
     {
       "id": 0,
@@ -27,4 +30,25 @@ movieStubApp.controller("movieStubController", function ($scope) {
       "thumb": "http://upload.wikimedia.org/wikipedia/en/6/66/Transformers07.jpg"
     }
   ];
+  
+  $scope.getMovieById = function (id) {
+    var movies = $scope.movies;
+    // loop through movies array
+    for (var i = 0; i < movies.length; i++) {
+      var movie = $scope.movies[i];
+      // find matching movie based on id
+      if (movie.id == id) {
+        // set current movie based on search
+        $scope.currMovie = movie;
+      }
+    }
+  };
+  $scope.back = function () {
+    window.history.back();
+  };
+});
+
+movieStubApp.controller("movieDetailsController", 
+  function ($scope, $routeParams) {
+  $scope.getMovieById($routeParams.id);
 });

@@ -5,30 +5,17 @@
   <title>Movie Stub - Book Movie Tickets Online</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-  <script type="text/javascript" src="js/lib/angular.min.js"></script>
   <script type="text/javascript" src="js/lib/jquery.min.js"></script>
   <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/lib/angular.min.js"></script>
+  <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
   <script type="text/javascript" src="js/controller/app.js"></script>
+  <script type="text/javascript" src="js/router/router.js"></script>
 </head>
-<body class="container" data-ng-controller="movieStubController">
-  <h1>Movie Stub</h1>
-  <h4>Book Movie Tickets Online</h4>
+<body class="container-fluid" data-ng-controller="movieStubController">
+  <div data-ng-include src="headerSrc"></div>
   <hr />
-    <div class="row">
-      <div class="col-xs-6">
-        <h4>Tickets available for:</h4>
-      </div>
-      <div class="col-xs-6">
-        <input class="form-control" type="text" placeholder="Search a movie" data-ng-model="search">
-      </div>
-    </div>
-    <br/>
-  <ul>
-  <!-- movies listed in alphabetical order -->
-    <li data-ng-repeat="movie in movies | orderBy:'name':true | filter:search">
-        {{movie.name | uppercase}}
-        <a href="javascript:" data-ng-click="getMovieById(movie.id)">Availability</a>
-    </li>
-  </ul>
+  <!-- placeholder for template views -->
+  <div data-ng-view=""></div>
 </body>
 </html>
